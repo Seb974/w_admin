@@ -8,15 +8,17 @@ import { getDateFrom, isDefined, getNumericOrNull, getInt, getFloat } from 'src/
 import { getWeekDays } from 'src/helpers/days';
 import AddressPanel from 'src/components/farmPages/AddressPanel';
 import Select from 'src/components/forms/Select';
+import Image from 'src/components/forms/image';
+
 
 const initialPosition = [-21.329519, 55.471617];
-const initialInformations = { name: '', address: '', address2: '', zipcode: '', city: '', position: initialPosition, description: '', energy: 'SOLAIRE', beginAt: '', investmentCost: '', computer: '', power: '', dailyProfit: '', profitPercent: '', partPrice: ''};
+const initialInformations = { name: '', address: '', address2: '', zipcode: '', city: '', position: initialPosition, description: '', energy: 'SOLAIRE', beginAt: '', investmentCost: '', computer: '', power: '', dailyProfit: '', profitPercent: '', partPrice: '', image: null};
 
 const Farm = ({ match, history }) => {
 
     const { id = "new" } = match.params;
     const [editing, setEditing] = useState(false);
-    const defaultErrors = {name:"", address: "", address2: "", zipcode: "", city: "", position: "", description: "", energy: '', beginAt: '', investmentCost: '', computer: '', power: '', dailyProfit: '', profitPercent: '', partPrice: ''};
+    const defaultErrors = {name:"", address: "", address2: "", zipcode: "", city: "", position: "", description: "", energy: '', beginAt: '', investmentCost: '', computer: '', power: '', dailyProfit: '', profitPercent: '', partPrice: '', image: ''};
     const [farm, setFarm] = useState(initialInformations);
     const [errors, setErrors] = useState(defaultErrors);
 
@@ -26,10 +28,9 @@ const Farm = ({ match, history }) => {
 
     useEffect(() => fetchFarms(id), [id]);
 
-    const onInformationsChange = (newFarm) => {
-        console.log(newFarm);
-        setFarm(newFarm)
-    };
+    // const onInformationsChange = (newFarm) => {
+    //     setFarm(newFarm)
+    // };
     const handleChange = ({ currentTarget }) => setFarm({...farm, [currentTarget.name]: currentTarget.value});
 
     const onUpdatePosition = ({position, address, zipcode, city}) => {
@@ -52,7 +53,20 @@ const Farm = ({ match, history }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const farmToWrite = getFarmToWrite();
-        const request = !editing ? FarmActions.create(farm) : FarmActions.update(id, farm);
+        console.log(farmToWrite);
+        if (farmToWrite.image && !farmToWrite.image.filePath) {
+            console.log(farmToWrite.image);
+            FarmActions.createImage(farmToWrite.image)
+                       .then(image => {
+                            writeFarm({...farmToWrite, image});
+                       });
+        } else {
+            writeFarm(farmToWrite);
+        }
+    };
+
+    const writeFarm = farmToWrite => {
+        const request = !editing ? FarmActions.create(farmToWrite) : FarmActions.update(id, farmToWrite);
         request.then(response => {
                     setErrors(defaultErrors);
                     //TODO : Flash notification de succès
@@ -71,7 +85,7 @@ const Farm = ({ match, history }) => {
                        //TODO : Flash notification d'erreur
                    }
                });
-    };
+    }
 
     const getFarmToWrite = () => {
         return {
@@ -140,6 +154,7 @@ const Farm = ({ match, history }) => {
                                     </CFormGroup>
                                 </CCol>
                             </CRow>
+                            <Image product={farm} setProduct={setFarm} />
 
                             <hr/>
                             <CRow className="mt-0 mb-3">

@@ -70,7 +70,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build --max-old-space-size=4096",
     "test": "react-scripts test",
     "clearCache": "jest --clearCache",
     "test:cov": "npm test -- --coverage --watchAll=false",

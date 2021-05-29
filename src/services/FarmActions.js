@@ -24,10 +24,18 @@ function create(user) {
     return api.post('/api/farms', user);
 }
 
+function createImage(image) {
+    let formData = new FormData();
+    formData.append('file', image);
+    return api.post('/api/pictures', formData, {headers: {'Content-type': 'multipart/form-data'}})
+              .then(response => response.data['@id']);
+}
+
 export default {
     findAll,
     delete: deleteFarm,
     find,
     update,
-    create
+    create,
+    createImage
 }

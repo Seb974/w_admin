@@ -3,6 +3,7 @@ import { HashRouter, Route, Switch } from 'react-router-dom';
 import AdminRoute from './components/route/AdminRoute';
 import DataProvider from './data/dataProvider/dataProvider';
 import './scss/style.scss';
+import './assets/css/general.css';
 
 const loading = (
   <div className="pt-3 text-center">

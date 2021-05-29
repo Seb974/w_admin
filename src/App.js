@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { HashRouter, Route, Switch } from 'react-router-dom';
+import AdminRoute from './components/route/AdminRoute';
+import DataProvider from './data/dataProvider/dataProvider';
 import './scss/style.scss';
 
 const loading = (
@@ -24,6 +26,7 @@ class App extends Component {
 
   render() {
     return (
+      <DataProvider>
       <HashRouter>
           <React.Suspense fallback={loading}>
             <Switch>
@@ -32,10 +35,12 @@ class App extends Component {
               <Route exact path="/404" name="Page 404" render={props => <Page404 {...props}/>} />
               <Route exact path="/500" name="Page 500" render={props => <Page500 {...props}/>} />
               <Route path="/apps/email" name="Email App" render={props => <TheEmailApp {...props}/>} />
-              <Route path="/" name="Home" render={props => <TheLayout {...props}/>} />
+              {/* <Route path="/" name="Home" render={props => <TheLayout {...props}/>} /> */}
+              <AdminRoute path="/" name="Home" component={ TheLayout } />
             </Switch>
           </React.Suspense>
       </HashRouter>
+      </DataProvider>
     );
   }
 }

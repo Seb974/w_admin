@@ -1,5 +1,9 @@
 import React from 'react';
 
+const Users = React.lazy(() => import('./views/components/users/users'));
+const Farms = React.lazy(() => import('./views/components/farms/farms'));
+const Farm = React.lazy(() => import('./views/components/farms/farm'));
+
 const CodeEditors = React.lazy(() => import('./views/editors/code-editors/CodeEditors'));
 const TextEditors = React.lazy(() => import('./views/editors/text-editors/TextEditors'));
 
@@ -48,11 +52,14 @@ const Modals = React.lazy(() => import('./views/notifications/modals/Modals'));
 const Colors = React.lazy(() => import('./views/theme/colors/Colors'));
 const Typography = React.lazy(() => import('./views/theme/typography/Typography'));
 const Widgets = React.lazy(() => import('./views/widgets/Widgets'));
-const Users = React.lazy(() => import('./views/users/Users'));
+// const Users = React.lazy(() => import('./views/users/Users'));
 const User = React.lazy(() => import('./views/users/User'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
+  { path: '/components/farms/:id', name: 'Farm', component: Farm },
+  { path: '/components/farms', name: 'Farms', component: Farms },
+  { path: '/components/users', name: 'Users', component: Users },
   { path: '/dashboard', name: 'Dashboard', component: Dashboard },
   { path: '/theme', name: 'Theme', component: Colors, exact: true },
   { path: '/theme/colors', name: 'Colors', component: Colors },

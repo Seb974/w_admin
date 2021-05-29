@@ -40,6 +40,18 @@ const _nav = [
     _children: [
       {
         _tag: 'CSidebarNavItem',
+        name: "Fermes",
+        to: '/components/farms',
+        icon: <CIcon name="cil-home" customClasses="c-sidebar-nav-icon"/>,
+      },
+      {
+        _tag: 'CSidebarNavItem',
+        name: 'Utilisateurs',
+        to: '/components/users',
+        icon: <CIcon name="cil-people" customClasses="c-sidebar-nav-icon"/>,
+      },
+      {
+        _tag: 'CSidebarNavItem',
         name: 'Breadcrumb',
         to: '/base/breadcrumbs',
       },

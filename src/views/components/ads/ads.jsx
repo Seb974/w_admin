@@ -48,7 +48,7 @@ const Ads = (props) => {
               pagination
               scopedSlots = {{
                 'ferme':
-                  item => <td><Link to={ "/components/ads/" + item.id }>{ item.farm.name }</Link></td>
+                  item => <td><Link to={ "/components/ads/" + item.id }>{ isDefined(item.farm) ? item.farm.name : "-" }</Link></td>
                 ,
                 'reste':
                   item => <td>{ item.usageLimit - item.used }</td>

@@ -17,7 +17,7 @@ const Ad = ({ match, history }) => {
     const { farms } = useContext(FarmContext);
     const [editing, setEditing] = useState(false);
     const defaultErrors = {farm: "", used: "", usageLimit: ""};
-    const [ad, setAd] = useState({farm:farms[0], used: 0, usageLimit: 50});
+    const [ad, setAd] = useState({farm:farms[0]['@id'], used: 0, usageLimit: 50});
     const [errors, setErrors] = useState(defaultErrors);
 
     useEffect(() => {
@@ -44,7 +44,7 @@ const Ad = ({ match, history }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const adToWrite = {...ad, farm: ad.farm['@id']}
+        const adToWrite = {...ad, farm: ad.farm}
         console.log(adToWrite);
         writeAd(adToWrite);
     };

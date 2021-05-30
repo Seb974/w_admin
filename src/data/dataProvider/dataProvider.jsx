@@ -26,12 +26,14 @@ const DataProvider = ({ children }) => {
         AuthActions.setErrorHandler(setCurrentUser, setIsAuthenticated);
         FarmActions
             .findAll()
-            .then(response => setFarms(response));
+            .then(response => {
+                setFarms(response);
+                console.log(response);
+            });
     },[]);
 
     useEffect(() => {
         setCurrentUser(AuthActions.getCurrentUser());
-        console.log(currentUser);
     }, [isAuthenticated]);
 
 

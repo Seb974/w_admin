@@ -58,7 +58,7 @@ const Farm = ({ match, history }) => {
             console.log(farmToWrite.image);
             FarmActions.createImage(farmToWrite.image)
                        .then(image => {
-                            writeFarm({...farmToWrite, image});
+                            writeFarm({...farmToWrite, picture: image});
                        });
         } else {
             writeFarm(farmToWrite);

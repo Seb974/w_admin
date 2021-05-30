@@ -1,6 +1,8 @@
 import React from 'react';
 
 const Users = React.lazy(() => import('./views/components/users/users'));
+const Ads = React.lazy(() => import('./views/components/ads/ads'));
+const Ad = React.lazy(() => import('./views/components/ads/ad'));
 const Farms = React.lazy(() => import('./views/components/farms/farms'));
 const Farm = React.lazy(() => import('./views/components/farms/farm'));
 
@@ -57,6 +59,8 @@ const User = React.lazy(() => import('./views/users/User'));
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
+  { path: '/components/ads/:id', name: 'Ad', component: Ad },
+  { path: '/components/ads', name: 'Ads', component: Ads },
   { path: '/components/farms/:id', name: 'Farm', component: Farm },
   { path: '/components/farms', name: 'Farms', component: Farms },
   { path: '/components/users', name: 'Users', component: Users },

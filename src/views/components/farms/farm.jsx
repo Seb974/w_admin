@@ -41,7 +41,7 @@ const Farm = ({ match, history }) => {
         if (id !== "new") {
             setEditing(true);
             FarmActions.find(id)
-                .then( response => setFarm(response))
+                .then( response => setFarm({...response, image: response.picture}))
                 .catch(error => {
                     console.log(error);
                     // TODO : Notification flash d'une erreur
@@ -53,7 +53,6 @@ const Farm = ({ match, history }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const farmToWrite = getFarmToWrite();
-        console.log(farmToWrite);
         if (farmToWrite.image && !farmToWrite.image.filePath) {
             console.log(farmToWrite.image);
             FarmActions.createImage(farmToWrite.image)

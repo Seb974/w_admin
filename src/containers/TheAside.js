@@ -228,7 +228,7 @@ const TheAside = () => {
               </div>
             </div>
             <hr />
-            <h6>System Utilization</h6>
+            <h6>Données système</h6>
             <div className="text-uppercase mb-1 mt-4"><small><b>CPU Usage</b></small></div>
             <CProgress size="xs" color="info" value={25} />
             <small className="text-muted">348 Processes. 1/4 Cores.</small>

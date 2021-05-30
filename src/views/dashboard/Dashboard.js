@@ -22,13 +22,13 @@ const WidgetsBrand = lazy(() => import('../widgets/WidgetsBrand.js'))
 const Dashboard = () => {
   return (
     <>
-      <WidgetsDropdown />
-      <CCard>
+      {/* <WidgetsDropdown /> */}
+      {/* <CCard>
         <CCardBody>
           <CRow>
             <CCol sm="5">
-              <h4 id="traffic" className="card-title mb-0">Traffic</h4>
-              <div className="small text-muted">November 2017</div>
+              <h4 id="traffic" className="card-title mb-0">Trafic</h4>
+              <div className="small text-muted">Avril 2021</div>
             </CCol>
             <CCol sm="7" className="d-none d-md-block">
               <CButton color="primary" className="float-right">
@@ -55,8 +55,8 @@ const Dashboard = () => {
         <CCardFooter>
           <CRow className="text-center">
             <CCol md sm="12" className="mb-sm-2 mb-0">
-              <div className="text-muted">Visits</div>
-              <strong>29.703 Users (40%)</strong>
+              <div className="text-muted">Visites</div>
+              <strong>29.703 Utilisateurs (40%)</strong>
               <CProgress
                 className="progress-xs mt-2"
                 precision={1}
@@ -66,7 +66,7 @@ const Dashboard = () => {
             </CCol>
             <CCol md sm="12" className="mb-sm-2 mb-0 d-md-down-none">
               <div className="text-muted">Unique</div>
-              <strong>24.093 Users (20%)</strong>
+              <strong>24.093 Utilisateurs (20%)</strong>
               <CProgress
                 className="progress-xs mt-2"
                 precision={1}
@@ -75,8 +75,8 @@ const Dashboard = () => {
               />
             </CCol>
             <CCol md sm="12" className="mb-sm-2 mb-0">
-              <div className="text-muted">Pageviews</div>
-              <strong>78.706 Views (60%)</strong>
+              <div className="text-muted">Visites</div>
+              <strong>78.706 Vues (60%)</strong>
               <CProgress
                 className="progress-xs mt-2"
                 precision={1}
@@ -85,8 +85,8 @@ const Dashboard = () => {
               />
             </CCol>
             <CCol md sm="12" className="mb-sm-2 mb-0">
-              <div className="text-muted">New Users</div>
-              <strong>22.123 Users (80%)</strong>
+              <div className="text-muted">Nouveaux utilisateurs</div>
+              <strong>22.123 Adhérents (80%)</strong>
               <CProgress
                 className="progress-xs mt-2"
                 precision={1}
@@ -95,8 +95,8 @@ const Dashboard = () => {
               />
             </CCol>
             <CCol md sm="12" className="mb-sm-2 mb-0 d-md-down-none">
-              <div className="text-muted">Bounce Rate</div>
-              <strong>Average Rate (40.15%)</strong>
+              <div className="text-muted">Taux de conversion</div>
+              <strong>Taux (40.15%)</strong>
               <CProgress
                 className="progress-xs mt-2"
                 precision={1}
@@ -105,15 +105,15 @@ const Dashboard = () => {
             </CCol>
           </CRow>
         </CCardFooter>
-      </CCard>
+      </CCard> */}
 
-      <WidgetsBrand withCharts/>
+      {/* <WidgetsBrand withCharts/> */}
 
       <CRow>
         <CCol>
           <CCard>
             <CCardHeader>
-              Traffic {' & '} Sales
+              Trafic {' & '} ventes
             </CCardHeader>
             <CCardBody>
               <CRow>
@@ -122,14 +122,14 @@ const Dashboard = () => {
                   <CRow>
                     <CCol sm="6">
                       <CCallout color="info">
-                        <small className="text-muted">New Clients</small>
+                        <small className="text-muted">Nouveaux Clients</small>
                         <br />
                         <strong className="h4">9,123</strong>
                       </CCallout>
                     </CCol>
                     <CCol sm="6">
                       <CCallout color="danger">
-                        <small className="text-muted">Recurring Clients</small>
+                        <small className="text-muted">Clients récurrents</small>
                         <br />
                         <strong className="h4">22,643</strong>
                       </CCallout>
@@ -141,7 +141,7 @@ const Dashboard = () => {
                   <div className="progress-group mb-4">
                     <div className="progress-group-prepend">
                       <span className="progress-group-text">
-                        Monday
+                        Lundi
                       </span>
                     </div>
                     <div className="progress-group-bars">
@@ -152,7 +152,7 @@ const Dashboard = () => {
                   <div className="progress-group mb-4">
                     <div className="progress-group-prepend">
                       <span className="progress-group-text">
-                      Tuesday
+                      Mardi
                       </span>
                     </div>
                     <div className="progress-group-bars">
@@ -163,7 +163,7 @@ const Dashboard = () => {
                   <div className="progress-group mb-4">
                     <div className="progress-group-prepend">
                       <span className="progress-group-text">
-                      Wednesday
+                      Mercredi
                       </span>
                     </div>
                     <div className="progress-group-bars">
@@ -174,7 +174,7 @@ const Dashboard = () => {
                   <div className="progress-group mb-4">
                     <div className="progress-group-prepend">
                       <span className="progress-group-text">
-                      Thursday
+                      Jeudi
                       </span>
                     </div>
                     <div className="progress-group-bars">
@@ -185,7 +185,7 @@ const Dashboard = () => {
                   <div className="progress-group mb-4">
                     <div className="progress-group-prepend">
                       <span className="progress-group-text">
-                      Friday
+                      Vendredi
                       </span>
                     </div>
                     <div className="progress-group-bars">
@@ -196,7 +196,7 @@ const Dashboard = () => {
                   <div className="progress-group mb-4">
                     <div className="progress-group-prepend">
                       <span className="progress-group-text">
-                      Saturday
+                      Samedi
                       </span>
                     </div>
                     <div className="progress-group-bars">
@@ -207,7 +207,7 @@ const Dashboard = () => {
                   <div className="progress-group mb-4">
                     <div className="progress-group-prepend">
                       <span className="progress-group-text">
-                      Sunday
+                      Dimanche
                       </span>
                     </div>
                     <div className="progress-group-bars">
@@ -218,10 +218,10 @@ const Dashboard = () => {
                   <div className="legend text-center">
                     <small>
                       <sup className="px-1"><CBadge shape="pill" color="info">&nbsp;</CBadge></sup>
-                      New clients
+                      Nouveaux clients
                       &nbsp;
                       <sup className="px-1"><CBadge shape="pill" color="danger">&nbsp;</CBadge></sup>
-                      Recurring clients
+                      Clients récurrents
                     </small>
                   </div>
                 </CCol>
@@ -231,14 +231,14 @@ const Dashboard = () => {
                   <CRow>
                     <CCol sm="6">
                       <CCallout color="warning">
-                        <small className="text-muted">Pageviews</small>
+                        <small className="text-muted">Pages vues</small>
                         <br />
                         <strong className="h4">78,623</strong>
                       </CCallout>
                     </CCol>
                     <CCol sm="6">
                       <CCallout color="success">
-                        <small className="text-muted">Organic</small>
+                        <small className="text-muted">Organique</small>
                         <br />
                         <strong className="h4">49,123</strong>
                       </CCallout>
@@ -250,7 +250,7 @@ const Dashboard = () => {
                   <div className="progress-group mb-4">
                     <div className="progress-group-header">
                       <CIcon className="progress-group-icon" name="cil-user" />
-                      <span className="title">Male</span>
+                      <span className="title">Homme</span>
                       <span className="ml-auto font-weight-bold">43%</span>
                     </div>
                     <div className="progress-group-bars">
@@ -260,7 +260,7 @@ const Dashboard = () => {
                   <div className="progress-group mb-5">
                     <div className="progress-group-header">
                       <CIcon className="progress-group-icon" name="cil-user-female" />
-                      <span className="title">Female</span>
+                      <span className="title">Femme</span>
                       <span className="ml-auto font-weight-bold">37%</span>
                     </div>
                     <div className="progress-group-bars">
@@ -270,7 +270,7 @@ const Dashboard = () => {
                   <div className="progress-group">
                     <div className="progress-group-header">
                       <CIcon className="progress-group-icon" name="cil-globe-alt" />
-                      <span className="title">Organic Search</span>
+                      <span className="title">Recherche organique</span>
                       <span className="ml-auto font-weight-bold">191,235 <span className="text-muted small">(56%)</span></span>
                     </div>
                     <div className="progress-group-bars">
@@ -324,11 +324,11 @@ const Dashboard = () => {
                 <thead className="thead-light">
                   <tr>
                     <th className="text-center"><CIcon name="cil-people" /></th>
-                    <th>User</th>
-                    <th className="text-center">Country</th>
-                    <th>Usage</th>
+                    <th>Utilisateurs</th>
+                    <th className="text-center">Pays</th>
+                    <th>Utilisation du service</th>
                     <th className="text-center">Payment Method</th>
-                    <th>Activity</th>
+                    <th>Activité</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -342,7 +342,7 @@ const Dashboard = () => {
                     <td>
                       <div>Yiorgos Avraamu</div>
                       <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
+                        <span>Nouveau</span> | Inscription: 18 Aug 2020
                       </div>
                     </td>
                     <td className="text-center">
@@ -354,7 +354,7 @@ const Dashboard = () => {
                           <strong>50%</strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted">11 Jun 2015 - 10 Jul 2015</small>
                         </div>
                       </div>
                       <CProgress className="progress-xs" color="success" value="50" />
@@ -363,8 +363,8 @@ const Dashboard = () => {
                       <CIcon height={25} name="cib-cc-mastercard" />
                     </td>
                     <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>10 sec ago</strong>
+                      <div className="small text-muted">Dernière connexion</div>
+                      <strong>Il y a 10 sec</strong>
                     </td>
                   </tr>
                   <tr>
@@ -378,7 +378,7 @@ const Dashboard = () => {
                       <div>Avram Tarasios</div>
                       <div className="small text-muted">
 
-                        <span>Recurring</span> | Registered: Jan 1, 2015
+                        <span>Récurrent</span> | Inscription: 14 Sep 2015
                       </div>
                     </td>
                     <td className="text-center">
@@ -390,7 +390,7 @@ const Dashboard = () => {
                           <strong>10%</strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted">11 Jun 2020 - 09 Jul 2020</small>
                         </div>
                       </div>
                       <CProgress className="progress-xs" color="info" value="10" />
@@ -399,8 +399,8 @@ const Dashboard = () => {
                       <CIcon height={25} name="cib-cc-visa" />
                     </td>
                     <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>5 minutes ago</strong>
+                      <div className="small text-muted">Dernière connexion</div>
+                      <strong>Il y a 5 minutes</strong>
                     </td>
                   </tr>
                   <tr>
@@ -413,7 +413,7 @@ const Dashboard = () => {
                     <td>
                       <div>Quintin Ed</div>
                       <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
+                        <span>Nouveau</span> | Inscription: 4 Jan 2021
                       </div>
                     </td>
                     <td className="text-center">
@@ -425,7 +425,7 @@ const Dashboard = () => {
                           <strong>74%</strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted">11 Jun 2018 - 10 Jul 2019</small>
                         </div>
                       </div>
                       <CProgress className="progress-xs" color="warning" value="74" />
@@ -434,8 +434,8 @@ const Dashboard = () => {
                       <CIcon height={25} name="cib-stripe" />
                     </td>
                     <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>1 hour ago</strong>
+                      <div className="small text-muted">Dernière connexion</div>
+                      <strong>Il y a 1h</strong>
                     </td>
                   </tr>
                   <tr>
@@ -448,7 +448,7 @@ const Dashboard = () => {
                     <td>
                       <div>Enéas Kwadwo</div>
                       <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
+                        <span>Nouveau</span> | Inscription: 01 Jan 2019
                       </div>
                     </td>
                     <td className="text-center">
@@ -460,7 +460,7 @@ const Dashboard = () => {
                           <strong>98%</strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted">11 Jun 2019 - 10 Jul 2019</small>
                         </div>
                       </div>
                       <CProgress className="progress-xs" color="danger" value="98" />
@@ -469,8 +469,8 @@ const Dashboard = () => {
                       <CIcon height={25} name="cib-paypal" />
                     </td>
                     <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>Last month</strong>
+                      <div className="small text-muted">Dernière connexion</div>
+                      <strong>Le mois dernier</strong>
                     </td>
                   </tr>
                   <tr>
@@ -483,7 +483,7 @@ const Dashboard = () => {
                     <td>
                       <div>Agapetus Tadeáš</div>
                       <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
+                        <span>Nouveau</span> | Inscription: 22 Oct 2019
                       </div>
                     </td>
                     <td className="text-center">
@@ -495,7 +495,7 @@ const Dashboard = () => {
                           <strong>22%</strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted">09 Jun 2018 - 10 Dec 2019</small>
                         </div>
                       </div>
                       <CProgress className="progress-xs" color="info" value="22" />
@@ -504,8 +504,8 @@ const Dashboard = () => {
                       <CIcon height={25} name="cib-google-pay"/>
                     </td>
                     <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>Last week</strong>
+                      <div className="small text-muted">Dernière connexion</div>
+                      <strong>La semaine dernière</strong>
                     </td>
                   </tr>
                   <tr>
@@ -518,7 +518,7 @@ const Dashboard = () => {
                     <td>
                       <div>Friderik Dávid</div>
                       <div className="small text-muted">
-                        <span>New</span> | Registered: Jan 1, 2015
+                        <span>Nouveau</span> | Inscritpion: 17 Nov 1, 2017
                       </div>
                     </td>
                     <td className="text-center">
@@ -530,7 +530,7 @@ const Dashboard = () => {
                           <strong>43%</strong>
                         </div>
                         <div className="float-right">
-                          <small className="text-muted">Jun 11, 2015 - Jul 10, 2015</small>
+                          <small className="text-muted">03 Avr 2018 - 14 Mai 2018</small>
                         </div>
                       </div>
                       <CProgress className="progress-xs" color="success" value="43" />
@@ -539,8 +539,8 @@ const Dashboard = () => {
                       <CIcon height={25} name="cib-cc-amex" />
                     </td>
                     <td>
-                      <div className="small text-muted">Last login</div>
-                      <strong>Yesterday</strong>
+                      <div className="small text-muted">Dernière connexion</div>
+                      <strong>Hier</strong>
                     </td>
                   </tr>
                 </tbody>

@@ -40,7 +40,7 @@ const TheHeaderDropdown = () => {
         </div>
       </CDropdownToggle>
       <CDropdownMenu className="pt-0" placement="bottom-end">
-        <CDropdownItem
+        {/* <CDropdownItem
           header
           tag="div"
           color="light"
@@ -92,8 +92,8 @@ const TheHeaderDropdown = () => {
           <CIcon name="cil-file" className="mfe-2" /> 
           Projects
           <CBadge color="primary" className="mfs-auto">42</CBadge>
-        </CDropdownItem>
-        <CDropdownItem divider />
+        </CDropdownItem> */}
+        {/* <CDropdownItem divider /> */}
         <CDropdownItem onClick={ handleLogout }>
           <CIcon name="cil-lock-locked" className="mfe-2" /> 
           Logout

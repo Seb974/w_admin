@@ -29,7 +29,8 @@ const TheSidebar = () => {
       onShowChange={(val) => dispatch({type: 'set', sidebarShow: val })}
     >
       <CSidebarBrand className="d-md-down-none" to="/">
-        <CIcon
+        TEAMIMIT
+        {/* <CIcon
           className="c-sidebar-brand-full"
           name="logo-negative"
           height={35}
@@ -38,7 +39,7 @@ const TheSidebar = () => {
           className="c-sidebar-brand-minimized"
           name="sygnet"
           height={35}
-        />
+        /> */}
       </CSidebarBrand>
       <CSidebarNav>
 
@@ -53,19 +54,19 @@ const TheSidebar = () => {
         />
 
         <CSidebarNavDivider />
-        <CSidebarNavTitle>System Utilization</CSidebarNavTitle>
+        <CSidebarNavTitle>DONNÉES SYSTÈME</CSidebarNavTitle>
         <CNavItem className="px-3 d-compact-none c-d-minimized-none">
-          <div className="text-uppercase mb-1"><small><b>CPU Usage</b></small></div>
+          <div className="text-uppercase mb-1"><small><b>CPU</b></small></div>
           <CProgress size="xs" value={25} color="info" />
           <small className="text-muted">348 Processes. 1/4 Cores.</small>
         </CNavItem>
         <CNavItem className="px-3 d-compact-none c-d-minimized-none">
-          <div className="text-uppercase mb-1"><small><b>Memory Usage</b></small></div>
+          <div className="text-uppercase mb-1"><small><b>Memoire</b></small></div>
           <CProgress size="xs" value={70} color="warning" />
           <small className="text-muted">11444GB/16384MB</small>
         </CNavItem>
         <CNavItem className="px-3 mb-3 d-compact-none c-d-minimized-none">
-          <div className="text-uppercase mb-1"><small><b>SSD 1 Usage</b></small></div>
+          <div className="text-uppercase mb-1"><small><b>SSD 1</b></small></div>
           <CProgress size="xs" value={95} color="danger" />
           <small className="text-muted">243GB/256GB</small>
         </CNavItem>

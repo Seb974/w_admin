@@ -28,9 +28,6 @@ const Farm = ({ match, history }) => {
 
     useEffect(() => fetchFarms(id), [id]);
 
-    // const onInformationsChange = (newFarm) => {
-    //     setFarm(newFarm)
-    // };
     const handleChange = ({ currentTarget }) => setFarm({...farm, [currentTarget.name]: currentTarget.value});
 
     const onUpdatePosition = ({position, address, zipcode, city}) => {
@@ -53,18 +50,27 @@ const Farm = ({ match, history }) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const farmToWrite = getFarmToWrite();
+        console.log(farmToWrite.image);
         if (farmToWrite.image && !farmToWrite.image.filePath) {
-            console.log(farmToWrite.image);
+            console.log(1)
             FarmActions.createImage(farmToWrite.image)
                        .then(image => {
                             writeFarm({...farmToWrite, picture: image});
                        });
         } else {
-            writeFarm(farmToWrite);
+            if (isDefined(farmToWrite.image) && farmToWrite.image.filePath){
+                console.log(2);
+                writeFarm({...farmToWrite, picture: farmToWrite.image['@id']});
+            }else {
+                console.log(3);
+                const { image, ...rest } = farmToWrite;
+                writeFarm(rest);
+            }
         }
     };
 
     const writeFarm = farmToWrite => {
+        console.log(farmToWrite);
         const request = !editing ? FarmActions.create(farmToWrite) : FarmActions.update(id, farmToWrite);
         request.then(response => {
                     setErrors(defaultErrors);
@@ -108,6 +114,11 @@ const Farm = ({ match, history }) => {
                     </CCardHeader>
                     <CCardBody>
                         <CForm onSubmit={ handleSubmit }>
+                            <CRow>
+                                <h4 className="ml-3 mt-3">Adresse</h4>
+                            </CRow>
+                            <AddressPanel informations={ farm } onInformationsChange={ setFarm } onPositionChange={ onUpdatePosition } errors={ errors }/>
+                            <hr/>
                             <CRow>
                                 <CCol xs="12" sm="12" md="4">
                                     <CFormGroup>
@@ -246,10 +257,6 @@ const Farm = ({ match, history }) => {
                                 </CCol>
                             </CRow>
                             <hr/>
-                            <CRow>
-                                <h4 className="ml-3 mt-3">Adresse</h4>
-                            </CRow>
-                            <AddressPanel informations={ farm } onInformationsChange={ setFarm } onPositionChange={ onUpdatePosition } errors={ errors }/>
                             <CRow className="mt-0 mb-3">
                                 <CCol xs="12" md="12">
                                     <CLabel htmlFor="textarea-input">Description du projet</CLabel>

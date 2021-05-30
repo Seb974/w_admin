@@ -16,7 +16,7 @@ const AddressPanel = ({ informations, onInformationsChange, onPositionChange, er
         const zipcode = JSON.stringify([lat, lng]) !== JSON.stringify(informations.position) ? suggestion.postcodes[0] : '';
         const city = JSON.stringify([lat, lng]) !== JSON.stringify(informations.position) ? suggestion.city : '';
         const address = JSON.stringify([lat, lng]) !== JSON.stringify(informations.position) ? suggestion.value : '';
-        onPositionChange({position: [lat, lng], address, zipcode, city});
+        onInformationsChange({...informations, position: [lat, lng], address, zipcode, city});
     };
 
     return (
